@@ -1,0 +1,50 @@
+<arakaron>
+	<jewelry id="0">
+		<name>Copper Ring</name>
+		<type>Ring</type>
+		<rarity>Common</rarity>
+		<logo>100</logo>
+		<desc>Plain, copper ring</desc>
+		<lvl>1</lvl>
+		<buffs>
+			<effect id="0" val="str">3</effect>
+		</buffs>
+		<cost>25</cost>
+	</jewelry>
+	<jewelry id="1">
+		<name>Copper Amulet</name>
+		<type>Amulet</type>
+		<rarity>Common</rarity>
+		<logo>100</logo>
+		<desc>Plain, copper ring</desc>
+		<lvl>1</lvl>
+		<buffs>
+			<effect id="0" val="str">3</effect>
+		</buffs>
+		<cost>25</cost>
+	</jewelry>
+	<jewelry id="2">
+		<name>Silver Ring</name>
+		<type>Ring</type>
+		<rarity>Common</rarity>
+		<logo>100</logo>
+		<desc>Plain, copper ring</desc>
+		<lvl>1</lvl>
+		<buffs>
+			<effect id="0" val="str">3</effect>
+		</buffs>
+		<cost>25</cost>
+	</jewelry>
+	<jewelry id="3">
+		<name>Silver Amulet</name>
+		<type>Amulet</type>
+		<rarity>Common</rarity>
+		<logo>100</logo>
+		<desc>Plain, copper ring</desc>
+		<lvl>1</lvl>
+		<buffs>
+			<effect id="0" val="str">3</effect>
+		</buffs>
+		<cost>25</cost>
+	</jewelry>
+</arakaron>

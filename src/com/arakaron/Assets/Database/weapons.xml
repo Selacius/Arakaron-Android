@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Arakaron>
+	<!-- 
+	<weapons id="2">
+		<name>Bent Bow</name>
+		<type>Bow</type>
+		<style>Ranged</style>
+		<rarity>Common</rarity>
+		<atk>12</atk>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Bow seems a little bent. Shoots a little funny too.</desc>
+		<stats>
+			<effect id="0" val="agi">10</effect>
+		</stats>
+		<on_hit></on_hit>
+		<cost>100</cost>
+	</weapons>
+	-->
+	<weapons id="0">
+		<name>Worn Shortsword</name>
+		<slot>MHand</slot>
+		<type>Sword</type>
+		<style>One-Hand</style>
+		<rarity>Common</rarity>
+		<atk>9</atk>
+		<atkp>9</atkp>
+		<lvl>1</lvl>
+		<logo>0</logo>
+		<desc>Broken piece of wand. Watch for slivers.</desc>
+		<stats>
+		</stats>
+		<on_hit perc="20" lvl="10">10</on_hit>		
+		<cost>100</cost>
+	</weapons>
+	<weapons id="1">
+		<name>Broken Staff</name>
+		<slot>MHand</slot>
+		<type>Staff</type>
+		<style>Two-Hand</style>
+		<rarity>Common</rarity>
+		<atk>16</atk>
+		<atkp>6</atkp>
+		<lvl>1</lvl>
+		<logo>1</logo>
+		<desc>Broken shard of a sword. Watch, it's very sharp.</desc>
+		<stats>
+			<effect id="0" val="Agi">10</effect>
+		</stats>
+		<on_hit></on_hit>	
+		<cost>100</cost>
+	</weapons>
+	<weapons id="2">
+		<name>Bent Bow</name>
+		<slot>MHand</slot>
+		<type>Bow</type>
+		<style>Ranged</style>
+		<rarity>Common</rarity>
+		<atk>12</atk>
+		<atkp>9</atkp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Bow seems a little bent. Shoots a little funny too.</desc>
+		<stats>
+		</stats>
+		<on_hit></on_hit>	
+		<cost>100</cost>
+	</weapons>
+	<weapons id="3">
+		<name>Worn Greatsword</name>
+		<slot>MHand</slot>
+		<type>Sword</type>
+		<style>Two-Hand</style>
+		<rarity>Common</rarity>
+		<atk>12</atk>
+		<atkp>9</atkp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Bow seems a little bent. Shoots a little funny too.</desc>
+		<stats>
+			<effect id="0" val="Agi">10</effect>
+		</stats>
+		<on_hit perc="20" lvl="10">10</on_hit>	
+		<cost>100</cost>
+	</weapons>
+	<weapons id="4">
+		<name>Worn Dirk</name>
+		<slot>MHand</slot>
+		<type>Dagger</type>
+		<style>One-Hand</style>
+		<rarity>Common</rarity>
+		<atk>9</atk>
+		<atkp>9</atkp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Bow seems a little bent. Shoots a little funny too.</desc>
+		<stats>
+		</stats>
+		<on_hit></on_hit>
+		<cost>100</cost>
+	</weapons>
+	<weapons id="5">
+		<name>Training Fists</name>
+		<slot>MHand</slot>
+		<type>Fist</type>
+		<style>One-Hand</style>
+		<rarity>Common</rarity>
+		<atk>7</atk>
+		<atkp>9</atkp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Bow seems a little bent. Shoots a little funny too.</desc>
+		<stats>
+		</stats>
+		<on_hit></on_hit>
+		<cost>100</cost>
+	</weapons>
+</Arakaron>

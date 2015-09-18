@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Arakaron>
+	<enemies id="0">
+		<name>Selacius</name>
+		<type>Peasant</type>
+		<tileset>enemy</tileset>
+		<lvl>1</lvl>
+		<g_hp>35</g_hp>
+		<g_mp>35</g_mp>
+		<g_str>5</g_str>
+		<g_spr>5</g_spr>
+		<g_mag>5</g_mag>
+		<g_dex>5</g_dex>
+		<g_vit>5</g_vit>
+		<g_intel>5</g_intel>
+		<gold>100</gold>
+		<exp>5</exp>
+		<rewards>
+			<item id="0">
+				<amnt>1</amnt>
+				<type>Item</type>
+				<perc>75</perc>
+			</item>
+			<item id="1">
+				<amnt>1</amnt>
+				<type>Item</type>
+				<perc>80</perc>
+			</item>
+		</rewards>
+		<skills>
+			<skill lvl="3">2</skill>
+			<skill lvl="3">3</skill>
+		</skills>
+	</enemies>
+</Arakaron>

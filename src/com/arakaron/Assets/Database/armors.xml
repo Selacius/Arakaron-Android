@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Arakaron>
+	<armors id="0">
+		<name>Apprentice's Robe</name>
+		<caste>Magic</caste>
+		<style>Cloth</style>
+		<slot>Chest</slot>
+		<rarity>Common</rarity>
+		<def>12</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>18</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="1">
+		<name>Apprentice's Pants</name>
+		<caste>Magic</caste>
+		<style>Cloth</style>
+		<slot>Pants</slot>
+		<rarity>Common</rarity>
+		<def>11</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>1</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="2">
+		<name>Apprentice's Boots</name>
+		<caste>Magic</caste>
+		<style>Cloth</style>
+		<slot>Boots</slot>
+		<rarity>Common</rarity>
+		<def>8</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="3">
+		<name>Footpad's Robe</name>
+		<caste>Rogue</caste>
+		<style>Cloth</style>
+		<slot>Chest</slot>
+		<rarity>Common</rarity>
+		<def>12</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>8</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="4">
+		<name>Footpad's Pants</name>
+		<caste>Rogue</caste>
+		<style>Cloth</style>
+		<slot>Pants</slot>
+		<rarity>Common</rarity>
+		<def>11</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>1</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="5">
+		<name>Footpad's Boots</name>
+		<caste>Rogue</caste>
+		<style>Cloth</style>
+		<slot>Boots</slot>
+		<rarity>Common</rarity>
+		<atk>33</atk>
+		<def>8</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="6">
+		<name>Recruit's Robe</name>
+		<caste>Physical</caste>
+		<style>Cloth</style>
+		<slot>Chest</slot>
+		<rarity>Common</rarity>
+		<def>12</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>20</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="7">
+		<name>Recruit's Pants</name>
+		<caste>Physical</caste>
+		<style>Cloth</style>
+		<slot>Pants</slot>
+		<rarity>Common</rarity>
+		<def>11</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>1</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="8">
+		<name>Recruit's Boots</name>
+		<caste>Physical</caste>
+		<style>Cloth</style>
+		<slot>Boots</slot>
+		<rarity>Common</rarity>
+		<def>8</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="9">
+		<name>Warder's Robe</name>
+		<caste>Hunter</caste>
+		<style>Cloth</style>
+		<slot>Chest</slot>
+		<rarity>Common</rarity>
+		<def>12</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>0</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="10">
+		<name>Warder's Pants</name>
+		<caste>Hunter</caste>
+		<style>Cloth</style>
+		<slot>Pants</slot>
+		<rarity>Common</rarity>
+		<def>11</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>1</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="11">
+		<name>Warder's Boots</name>
+		<caste>Hunter</caste>
+		<style>Cloth</style>
+		<slot>Boots</slot>
+		<rarity>Common</rarity>
+		<def>8</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="12">
+		<name>Trainee's Robe</name>
+		<caste>Monk</caste>
+		<style>Cloth</style>
+		<slot>Chest</slot>
+		<rarity>Common</rarity>
+		<def>12</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>0</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="13">
+		<name>Trainee's Pants</name>
+		<caste>Monk</caste>
+		<style>Cloth</style>
+		<slot>Pants</slot>
+		<rarity>Common</rarity>
+		<def>11</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>1</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+	<armors id="14">
+		<name>Trainee's Boots</name>
+		<caste>Monk</caste>
+		<style>Cloth</style>
+		<slot>Boots</slot>
+		<rarity>Common</rarity>
+		<def>8</def>
+		<defp>12</defp>
+		<mdef>12</mdef>
+		<mdefp>12</mdefp>
+		<lvl>1</lvl>
+		<logo>3</logo>
+		<desc>Ragged piece of cloth. Kind of smells too.</desc>
+		<stats>
+		</stats>
+		<buffs>
+		</buffs>
+		<cost>100</cost>
+	</armors>
+</Arakaron>

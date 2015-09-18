@@ -1,0 +1,47 @@
+<Arakaron>
+	<growth id="1">
+		<grad2>-0.0091</grad2>
+		<grad>1.8354</grad>
+		<base>9.1671</base>
+	</growth>
+	<growth id="2">
+		<grad2>-0.0082</grad2>
+		<grad>1.7409</grad>
+		<base>8.7269</base>
+	</growth>
+	<growth id="3">
+		<grad2>-0.0085</grad2>
+		<grad>1.754</grad>
+		<base>8.7576</base>
+	</growth>
+	<growth id="4">
+		<grad2>-0.0063</grad2>
+		<grad>1.4008</grad>
+		<base>8.5367</base>
+	</growth>
+	<growth id="5">
+		<grad2>-0.0066</grad2>
+		<grad>1.4521</grad>
+		<base>5.4553</base>
+	</growth>
+	<growth id="6">
+		<grad2>-0.0078</grad2>
+		<grad>1.5553</grad>
+		<base>6.8805</base>
+	</growth>
+	<growth id="7">
+		<grad2>-0.004</grad2>
+		<grad>0.9312</grad>
+		<base>3.6755</base>
+	</growth>
+	<growth id="8">
+		<grad2>-0.0052</grad2>
+		<grad>1.017</grad>
+		<base>2.8462</base>
+	</growth>
+	<growth id="9">
+		<grad2>-0.0044</grad2>
+		<grad>0.8878</grad>
+		<base>3.3141</base>
+	</growth>
+</Arakaron>

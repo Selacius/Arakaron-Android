@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Arakaron>
+	<ally id="0">
+		<name>Selacius</name>
+		<race>Human</race>
+		<type>Physical</type>
+		<lvl>1</lvl>
+		<g_hp>3</g_hp>
+		<g_mp>5</g_mp>
+		<g_str>3</g_str>
+		<g_agi>4</g_agi>
+		<g_spr>6</g_spr>
+		<g_dex>6</g_dex>
+		<g_vit>5</g_vit>
+		<g_intel>7</g_intel>
+		<equip>
+			<gear style="armor" type="helm">-</gear>
+			<gear style="armor" type="chest">6</gear>
+			<gear style="armor" type="legs">-</gear>
+			<gear style="weapon" type="main">1</gear>
+			<gear style="weapon" type="off">-</gear>
+			<gear style="acc" type="acc1">-</gear>
+			<gear style="acc" type="acc2">1</gear>
+		</equip>
+		<skills>
+			<skill lvl="3">2</skill>
+			<skill lvl="3">3</skill>
+		</skills>
+	</ally>
+	<ally id="1">
+		<name>Sontos</name>
+		<race>Dwarf</race>
+		<type>Ranged</type>
+		<lvl>1</lvl>
+		<g_hp>4</g_hp>
+		<g_mp>4</g_mp>
+		<g_str>4</g_str>
+		<g_agi>3</g_agi>
+		<g_spr>5</g_spr>
+		<g_dex>7</g_dex>
+		<g_vit>6</g_vit>
+		<g_intel>6</g_intel>
+		<equip>
+			<gear style="armor" type="helm">-</gear>
+			<gear style="armor" type="chest">0</gear>
+			<gear style="armor" type="legs">-</gear>
+			<gear style="weapon" type="main">2</gear>
+			<gear style="weapon" type="off">-</gear>
+			<gear style="acc" type="acc1">-</gear>
+			<gear style="acc" type="acc2">-</gear>
+		</equip>
+		<skills>
+			<skill id="0" lvl="1">1</skill>
+		</skills>
+	</ally>
+	<ally id="2">
+		<name>Archimonde</name>
+		<race>Elf</race>
+		<type>Magic</type>
+		<lvl>1</lvl>
+		<g_hp>5</g_hp>
+		<g_mp>3</g_mp>
+		<g_str>7</g_str>
+		<g_agi>5</g_agi>
+		<g_spr>4</g_spr>
+		<g_dex>5</g_dex>
+		<g_vit>6</g_vit>
+		<g_intel>3</g_intel>
+		<equip>
+			<gear style="armor" type="helm">-</gear>
+			<gear style="armor" type="chest">3</gear>
+			<gear style="armor" type="legs">-</gear>
+			<gear style="weapon" type="main">3</gear>
+			<gear style="weapon" type="off">-</gear>
+			<gear style="acc" type="acc1">-</gear>
+			<gear style="acc" type="acc2">-</gear>
+		</equip>
+		<skills>
+			<skill id="0" lvl="1">1</skill>
+		</skills>
+	</ally>
+</Arakaron>

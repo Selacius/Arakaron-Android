@@ -203,7 +203,7 @@ package com.arakaron.Helpers.Menus{
 					}
 				}
 			}			
-			this.gearList.xmlData = data;
+			this._gearList.xmlData = data;
 		}
 		
 		public function onExitClick(e:MouseEvent):void{

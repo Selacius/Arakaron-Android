@@ -58,8 +58,8 @@ package com.arakaron.GUI{
 			
 			this.cHPBar.reDrawVals(char.HPMin, char.HPMax);			
 			this.cMPBar.reDrawVals(char.MPMin, char.MPMax);
-			
-			this.cGraphic.y = (this.height - this.cGraphic.height);
+						
+			this.cGraphic.y = 10;
 			if (this.xpBar) {
 				this.cXPBar.reDrawVals(char.xp, char.xpn);
 				this.cGraphic.y = (this.height - this.cGraphic.height)/2;
@@ -138,7 +138,6 @@ package com.arakaron.GUI{
 			if (this.xpBar) {
 				this.addXPBar();
 			}
-			
 		}
 	}
 }

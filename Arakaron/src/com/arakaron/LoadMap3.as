@@ -1,14 +1,5 @@
 package com.arakaron{
-	import com.arakaron.Tiles.Animation;
-	import com.arakaron.Tiles.Block;
-	import com.arakaron.Tiles.Chest;
-	import com.arakaron.Tiles.Door;
-	import com.arakaron.Tiles.Exit;
-	import com.arakaron.Tiles.Immove2;
-	import com.arakaron.Tiles.Ore;
-	import com.arakaron.Tiles.Sign;
-	import com.arakaron.Tiles.Switch;
-	import com.arakaron.Tiles.Tile;
+	import com.arakaron.Tiles.*;
 	import com.arakaron.mapManager;
 	
 	import flash.display.Bitmap;
@@ -20,16 +11,16 @@ package com.arakaron{
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
-	import org.osmf.net.StreamingURLResource;
-	
-	public class LoadMap2 extends Sprite{
-		public var alias:String;
-		private var map_width:int;
+	public class LoadMap3 extends Sprite{
+		public var mapName:String;
+		private var mapWidth:int;
+		private var mapType:String = "Map";
+		public var mapVers:int;
 		
 		public var map_base:Loader;
 		public var map_canopy:Loader;
 		
-		private var map_XML:XML
+		private var mapObs:Object;
 		private var immovable:XMLList;
 		private var collidable:XMLList;
 		
@@ -43,33 +34,34 @@ package com.arakaron{
 		public var Regions:Array = new Array();
 		public var Event_Lists:Array = new Array();
 		
-		public function LoadMap2(map:XML){
+		public function LoadMap3(map:Object, mapData:Object){
 			super();
-		
-			this.map_XML = map;
 			
-			this.alias = this.map_XML.properties.property.(attribute('name') == 'alias').@value;
-			this.map_width = this.map_XML.attribute('width');		
+			this.mapObs = map;
 			
-			this.immovable = this.map_XML.objectgroup.(@name == "Immovable").object;
-			var yy:int;
-			var xx:int;
+			this.mapName = mapData.mapName;
+			this.mapWidth = (mapData.mapWidth * 16);
+			this.mapVers = mapData.mapVersion;			
 			
-			for each (var xmldoc:XML in this.immovable){
-				this.tiles = new Immove2(xmldoc.@x, xmldoc.@y, xmldoc.@width, xmldoc.@height);
-				this.Barrier[this.Barrier.length] = this.tiles;
-			}
-			
-			this.collidable = this.map_XML.objectgroup.(@name == "Collidable").object;
-			var type:String;
-
-			for each (var xmldoc:XML in this.collidable){
-				type = xmldoc.@name;
-				switch (type) {
-					case "chest":
-						this.tiles = new Chest(this.alias, xmldoc);
+			for each (var val:Object in this.mapObs) {
+				switch (val.tileAlias) {
+					case "Immove":
+						trace ("Immove Added");
+						this.tiles = new Immove2(val.tileX,val.tileY,val.tileWidth,val.tileHeight);
 						this.Barrier[this.Barrier.length] = this.tiles;
 						break;
+					case "Chest":
+						this.tiles = new Chest(this.mapName, val);
+						this.Barrier[this.Barrier.length] = this.tiles;
+						break;
+					case "Exit":
+						this.tiles = new Exit(val);
+						this.Barrier[this.Barrier.length] = this.tiles;
+						break;
+				}
+			}
+			
+			/*
 					case "exit":
 						this.tiles = new Exit(xmldoc);
 						this.Barrier[this.Barrier.length] = this.tiles;
@@ -109,10 +101,7 @@ package com.arakaron{
 			
 			this.map_XML = null;
 			this.immovable = null;
-			this.collidable = null;		
-			
-			//this.map_base = mapManager.mapBase[this.alias];
-			//this.map_canopy = mapManager.mapCanopy[this.alias];
+			this.collidable = null;		*/
 			
 			this.addEventListener(Event.ADDED_TO_STAGE,onAddedtoStage);
 			this.addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);

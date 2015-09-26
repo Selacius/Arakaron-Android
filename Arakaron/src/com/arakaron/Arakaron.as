@@ -1,6 +1,6 @@
 package com.arakaron {
 	
-	import com.arakaron.Assets.Tiles.Tile;
+	import com.arakaron.Tiles.Tile;
 	import com.arakaron.DPad.*;
 	import com.arakaron.GUI.Inventory;
 	import com.arakaron.GUI.MiniWin;
@@ -54,7 +54,7 @@ package com.arakaron {
 		public static var AlertWindow:MiniWin = new MiniWin();
 		
 		public var main_play:Player;
-		public var curr_map:LoadMap2;
+		public var curr_map:LoadMap3;
 		public var map_index:String;
 		public var hitTile;
 		
@@ -141,7 +141,7 @@ package com.arakaron {
 			
 			this.main_play.x = this.cntrX;
 			this.main_play.y = this.cntrY;
-			this.curr_map = mapManager.Maps["elf-zone3"];
+			this.curr_map = mapManager2.Maps["elf-zone3"];
 			
 			Game_Inventory.addInvent("A|1",1,false);
 			Game_Inventory.addInvent("A|2",1,false);

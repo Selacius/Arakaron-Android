@@ -1,4 +1,4 @@
-package com.arakaron.Assets.Tiles{
+package com.arakaron.Tiles{
 	import com.arakaron.Arakaron;
 	import com.arakaron.Game_Inventory;
 	import com.arakaron.LoadMap2;

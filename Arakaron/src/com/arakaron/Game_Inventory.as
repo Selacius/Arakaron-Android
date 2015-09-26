@@ -24,7 +24,7 @@ package com.arakaron{
 		public static function addInvent(id:String, num:int, newItem:Boolean):void {
 			var iType:String = id.split("|")[0];
 			var itmID:int = int(id.split("|")[1]);
-		
+			
 			if (Invent[iType][itmID] > 0) {
 				Invent[iType][itmID] = Invent[iType][itmID] + num;
 			} else {

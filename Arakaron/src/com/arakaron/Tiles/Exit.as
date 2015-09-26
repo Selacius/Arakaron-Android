@@ -1,4 +1,4 @@
-package com.arakaron.Assets.Tiles{
+package com.arakaron.Tiles{
 	import com.arakaron.Arakaron;
 	
 	import flash.display.Sprite;
@@ -16,23 +16,23 @@ package com.arakaron.Assets.Tiles{
 		
 		public var map_id:String, map_x:int, map_y:int;
 		
-		public function Exit(xmldoc:XML){
+		public function Exit(tileObs:Object){
 			super();
 			
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY;
 			
-			this.intWidth = xmldoc.@width;
-			this.intHeight = xmldoc.@height;
+			this.intWidth = tileObs.tileWidth;
+			this.intHeight = tileObs.tileHeight;
 			
 			this.caste = "Exit";
 			this.Interact = true;
 			
-			this.map_id = xmldoc.properties.property[0].@value;
-			this.map_x = xmldoc.properties.property[1].@value;
-			this.map_y = xmldoc.properties.property[2].@value;
+			this.map_id = tileObs.tileval1;
+			this.map_x = tileObs.tileval2;
+			this.map_y = tileObs.tileval3;
 			
-			xmldoc = null;
+			tileObs = null;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();

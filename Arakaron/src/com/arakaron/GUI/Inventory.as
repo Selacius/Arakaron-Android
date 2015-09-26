@@ -58,7 +58,8 @@ package com.arakaron.GUI{
 			trace ("Clickity Click Click");
 			data.appendChild(<i label={"Howdy"} data={"A|3"}/>);
 			trace (data);
-			this.gearList.data = data;
+			this._gearList.xmlData = data;
+			//this.gearList.XMLdata = data;
 		}
 		
 		public function onExitClick(e:MouseEvent):void{

@@ -1,4 +1,4 @@
-package com.arakaron.Assets.Tiles{
+package com.arakaron.Tiles{
 	import flash.display.Sprite;
 	
 	public class Immove2 extends Sprite implements Tile{

@@ -1,4 +1,4 @@
-package com.arakaron.Assets.Tiles{
+package com.arakaron.Tiles{
 	import com.arakaron.Arakaron;
 	import com.arakaron.Game_Inventory;
 	import com.arakaron.LoadMap2;
@@ -33,37 +33,34 @@ package com.arakaron.Assets.Tiles{
 		
 		private var openedframe:int;
 		
-		public function Chest(mapName:String, xmldoc:XML){
+		public function Chest(mapName:String, tileObs:Object){
 			super();
 			
 			this.caste = "Chest";
 			this.Interact = true;
-			this.chestID = mapName+"|"+xmldoc.@x+"|"+xmldoc.@y;
+			this.chestID = mapName+"|"+tileObs.tileX+"|"+tileObs.tileY;
 			
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y - 16;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 16;
 			
-			if (xmldoc.@type == "locked") {
+			if (tileObs.tileType == "locked") {
 				this.locked = true;
 			}
 			
-			this.key = xmldoc.properties.property[5].@value;
+			this.key = int(tileObs.tileVal2);
 
-			this.openedframe = int(xmldoc.properties.property[1].@value) + 4;
+			this.openedframe = int(tileObs.tileFrame) + 4;
 		
-			this.items = new Array();
-			for (var i:int = 2; i < 5; i++) {
-				var itm:Array = String(xmldoc.properties.property[i].@value).split("||");
-				if (itm[0] != 0) {
-					this.items.push(itm);	
-				}
+			this.items = String(tileObs.tileVal1).split(",");
+			for (var val:String in this.items) {
+				this.items[val] = this.items[val].split("||");
 			}
 			
 			if (this.items == null) {
 				this.empty = true;
 			}
 			
-			xmldoc = null;
+			tileObs = null;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();
@@ -135,9 +132,9 @@ package com.arakaron.Assets.Tiles{
 		public function onInteract():void {
 			if (!this.empty) {
 				if (this.locked) {
-					if (com.arakaron.Game_Inventory.checkInvent("i"+this.key)) {
+					if (com.arakaron.Game_Inventory.checkInvent("I|"+this.key)) {
 						giveItem();
-						com.arakaron.Game_Inventory.removeItem("i"+this.key,1, false);
+						com.arakaron.Game_Inventory.removeItem("I|"+this.key,1, false);
 						this.locked = false;
 						Arakaron.AlertWindow.updateWin("Used "+this.key+" to unlock the chest.", false);
 						sqlManager.insertSQL("events",{event_id:this.chestID,switch1:"1",switch2:"1"});

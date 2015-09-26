@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" nextobjectid="22">
  <properties>
-  <property name="alias" value="elf-zone2"/>
-  <property name="type" value="map"/>
+  <property name="mapName" value="elf-zone2"/>
+  <property name="mapType" value="map"/>
+  <property name="mapVersion" value="0.1"/>
  </properties>
  <tileset firstgid="1" name="TileSetFull" tilewidth="16" tileheight="16">
   <image source="../../../../../../../Map Checker/Assets/maps/TileSetFull.png" width="1024" height="2016"/>

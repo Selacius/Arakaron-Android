@@ -3,6 +3,7 @@ package{
 	import com.arakaron.GUI.TxtFields;
 	import com.arakaron.dbManager;
 	import com.arakaron.mapManager;
+	import com.arakaron.mapManager2;
 	import com.arakaron.sqlManager;
 	
 	import flash.display.*;
@@ -79,19 +80,19 @@ package{
 		private function onAddedtoStage(e:Event):void {
 			this.stat_text.text = "Loading Maps.";
 			
-			mapManager.addEventListener("mapTick", onTick);
-			mapManager.addEventListener("baseTick", onTick);
-			mapManager.addEventListener("canopyTick", onTick);
-			mapManager.addEventListener("mapFinishTick", onTick);
-			mapManager.setLoadMap();
+			mapManager2.addEventListener("mapTick", onTick);
+			mapManager2.addEventListener("baseTick", onTick);
+			mapManager2.addEventListener("canopyTick", onTick);
+			mapManager2.addEventListener("mapFinishTick", onTick);
+			mapManager2.setLoadMap();
 			
 			dbManager.addEventListener("fullTick",onTick);
 			dbManager.setDBLoad();
 			
-			this.loadMax = mapManager.mapArray.length + dbManager.loadArray.length;
-			this.loadTick = Math.round(100 * 400/this.loadMax)/100;
+		//	loadMax = mapManager2.mapLength + dbManager.loadArray.length;
+		//	this.loadTick = Math.round(100 * 400/loadMax)/100;
 
-			mapManager.startLoadMap();
+			//mapManager.startLoadMap();
 		}
 		
 		private function onTick (e:Event):void {
@@ -117,6 +118,9 @@ package{
 						this.loadIndex++;
 						break;
 				}
+				
+				loadMax = mapManager2.mapLength + dbManager.loadArray.length;
+				this.loadTick = Math.round(100 * 400/loadMax)/100;
 				
 				this.loader_box.width = this.loadTick * this.loadIndex;
 				this.loader_text.text = String(Math.ceil(100 * this.loadIndex/this.loadMax))+"%"; 

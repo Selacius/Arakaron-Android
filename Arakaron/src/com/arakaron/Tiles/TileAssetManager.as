@@ -1,4 +1,4 @@
-package com.arakaron.Assets.Tiles{
+package com.arakaron.Tiles{
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;

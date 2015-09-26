@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" nextobjectid="151">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" nextobjectid="152">
  <properties>
-  <property name="alias" value="elf-zone3"/>
-  <property name="type" value="map"/>
+  <property name="mapName" value="elf-zone3"/>
+  <property name="mapType" value="map"/>
+  <property name="mapVersion" value="0.1"/>
  </properties>
  <tileset firstgid="1" name="TileSetFull" tilewidth="16" tileheight="16">
   <image source="../../../../../../../Map Checker/Assets/maps/TileSetFull.png" width="1024" height="2016"/>
@@ -10820,207 +10821,202 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="Collidable">
-  <object id="2" name="exit" x="496" y="944" width="32" height="16">
+ <objectgroup name="Collidable" visible="0">
+  <object id="2" name="Exit" x="496" y="944" width="32" height="16">
    <properties>
     <property name="map_id" value="elf-start"/>
     <property name="map_x" value="32"/>
     <property name="map_y" value="2"/>
    </properties>
   </object>
-  <object id="3" name="crate" gid="3980" x="272" y="592" width="16" height="16">
+  <object id="3" name="Crate" gid="3980" x="272" y="592" width="16" height="16">
    <properties>
     <property name="content_id" value="0"/>
     <property name="content_num" value="5"/>
     <property name="frame" value="1"/>
    </properties>
   </object>
-  <object id="4" name="crate" gid="3980" x="288" y="688" width="16" height="16">
+  <object id="4" name="Crate" gid="3980" x="288" y="688" width="16" height="16">
    <properties>
     <property name="content_id" value="0"/>
     <property name="content_num" value="5"/>
     <property name="frame" value="0"/>
    </properties>
   </object>
-  <object id="5" name="chest" type="locked" gid="6462" x="336" y="768" width="16" height="16">
+  <object id="5" name="Chest" type="locked" gid="6462" x="336" y="768" width="16" height="16">
    <properties>
-    <property name="cid" value="1"/>
     <property name="frame" value="1"/>
     <property name="itm1_id" value="Gold|250"/>
     <property name="itm2_id" value="I|2||1"/>
     <property name="itm3_id" value="I|2||2"/>
-    <property name="key_reqd" value="1"/>
+    <property name="keyID" value="1"/>
    </properties>
   </object>
-  <object id="6" name="chest" gid="6462" x="320" y="848" width="16" height="16">
+  <object id="6" name="Chest" gid="6462" x="320" y="848" width="16" height="16">
    <properties>
-    <property name="cid" value="2"/>
     <property name="frame" value="3"/>
     <property name="itm1_id" value="I|1||1"/>
     <property name="itm2_id" value="I|2||1"/>
     <property name="itm3_id" value="I|2||1"/>
-    <property name="key_reqd" value=""/>
+    <property name="keyID" value=""/>
    </properties>
   </object>
-  <object id="7" name="sign" gid="3971" x="272" y="752" width="16" height="16">
+  <object id="7" name="Sign" gid="3971" x="272" y="752" width="16" height="16">
    <properties>
     <property name="frame" value="1"/>
     <property name="msg" value="Hello There"/>
    </properties>
   </object>
-  <object id="9" name="exit" x="640" y="752" width="32" height="16">
+  <object id="9" name="Exit" x="640" y="752" width="32" height="16">
    <properties>
     <property name="map_id" value="elf-store"/>
     <property name="map_x" value="10"/>
     <property name="map_y" value="17"/>
    </properties>
   </object>
-  <object id="10" name="door" x="560" y="704" width="16" height="16">
+  <object id="10" name="Door" x="560" y="704" width="16" height="16">
    <properties>
     <property name="canOpen" value="true"/>
     <property name="frame" value="0"/>
-    <property name="isLocked" value=""/>
     <property name="keyID" value="0"/>
    </properties>
   </object>
-  <object id="11" name="animation" type="small" gid="79" x="384" y="656" width="16" height="16">
+  <object id="11" name="Animation" type="small" gid="79" x="384" y="656" width="16" height="16">
    <properties>
     <property name="frame" value="0"/>
    </properties>
   </object>
-  <object id="12" name="animation" type="small" gid="79" x="416" y="656" width="16" height="16">
+  <object id="12" name="Animation" type="small" gid="79" x="416" y="656" width="16" height="16">
    <properties>
     <property name="frame" value="5"/>
    </properties>
   </object>
-  <object id="13" name="animation" type="small" gid="79" x="464" y="656" width="16" height="16">
+  <object id="13" name="Animation" type="small" gid="79" x="464" y="656" width="16" height="16">
    <properties>
     <property name="frame" value="6"/>
    </properties>
   </object>
-  <object id="14" name="animation" type="small" gid="79" x="496" y="656" width="16" height="16">
+  <object id="14" name="Animation" type="small" gid="79" x="496" y="656" width="16" height="16">
    <properties>
     <property name="frame" value="7"/>
    </properties>
   </object>
-  <object id="15" name="animation" type="large" gid="79" x="384" y="560" width="16" height="16">
+  <object id="15" name="Animation" type="large" gid="79" x="384" y="560" width="16" height="16">
    <properties>
     <property name="frame" value="0"/>
    </properties>
   </object>
-  <object id="16" name="animation" type="large" gid="79" x="448" y="560" width="16" height="16">
+  <object id="16" name="Animation" type="large" gid="79" x="448" y="560" width="16" height="16">
    <properties>
     <property name="frame" value="1"/>
    </properties>
   </object>
-  <object id="17" name="animation" type="large" gid="79" x="512" y="544" width="16" height="16">
+  <object id="17" name="Animation" type="large" gid="79" x="512" y="544" width="16" height="16">
    <properties>
     <property name="frame" value="2"/>
    </properties>
   </object>
-  <object id="18" name="ore" gid="7427" x="576" y="608" width="16" height="16">
+  <object id="18" name="Ore" gid="7427" x="576" y="608" width="16" height="16">
    <properties>
     <property name="frame" value="1"/>
     <property name="max" value="5"/>
    </properties>
   </object>
-  <object id="19" name="switch" gid="4105" x="544" y="816" width="16" height="16">
+  <object id="19" name="Switch" type="Touch" gid="4105" x="544" y="816" width="16" height="16">
    <properties>
     <property name="frame" value="3"/>
     <property name="multitrig" value=""/>
     <property name="reset" value="persist"/>
     <property name="trigVal" value="1|0"/>
-    <property name="trig_type" value="Touch"/>
     <property name="trigger_id" value="elf-zone3|208|464"/>
    </properties>
   </object>
-  <object id="20" name="block" gid="3977" x="416" y="768" width="16" height="16">
+  <object id="20" name="Block" gid="3977" x="416" y="768" width="16" height="16">
    <properties>
     <property name="collide" value="1"/>
     <property name="trigType" value="lvl"/>
     <property name="trigVal" value="1"/>
    </properties>
   </object>
-  <object id="21" name="switch" gid="4105" x="512" y="752" width="16" height="16">
+  <object id="21" name="Switch" type="Action" gid="4105" x="512" y="752" width="16" height="16">
    <properties>
     <property name="frame" value="3"/>
     <property name="multitrig" value="true"/>
     <property name="reset" value="map"/>
     <property name="trigVal" value="1|0"/>
-    <property name="trig_type" value="Action"/>
     <property name="trigger_id" value="elf-zone3|320|848"/>
    </properties>
   </object>
-  <object id="22" name="exit" x="224" y="0" width="32" height="16">
+  <object id="22" name="Exit" x="224" y="0" width="32" height="16">
    <properties>
     <property name="map_id" value="elf-store"/>
     <property name="map_x" value="10"/>
     <property name="map_y" value="17"/>
    </properties>
   </object>
-  <object id="24" name="block" gid="3826" x="496" y="432" width="112" height="32">
+  <object id="24" name="Block" gid="3826" x="496" y="432" width="112" height="32">
    <properties>
     <property name="collide" value="1"/>
     <property name="trigType" value="item"/>
     <property name="trigVal" value="1"/>
    </properties>
   </object>
-  <object id="25" name="animation" type="small" gid="79" x="608" y="16" width="16" height="16">
+  <object id="25" name="Animation" type="small" gid="79" x="608" y="16" width="16" height="16">
    <properties>
     <property name="frame" value="10"/>
    </properties>
   </object>
-  <object id="26" name="animation" type="small" gid="79" x="640" y="16" width="16" height="16">
+  <object id="26" name="Animation" type="small" gid="79" x="640" y="16" width="16" height="16">
    <properties>
     <property name="frame" value="11"/>
    </properties>
   </object>
-  <object id="27" name="animation" type="small" gid="79" x="608" y="48" width="16" height="16">
+  <object id="27" name="Animation" type="small" gid="79" x="608" y="48" width="16" height="16">
    <properties>
     <property name="frame" value="10"/>
    </properties>
   </object>
-  <object id="28" name="animation" type="small" gid="79" x="640" y="48" width="16" height="16">
+  <object id="28" name="Animation" type="small" gid="79" x="640" y="48" width="16" height="16">
    <properties>
     <property name="frame" value="11"/>
    </properties>
   </object>
-  <object id="29" name="animation" type="small" gid="79" x="608" y="64" width="16" height="16">
+  <object id="29" name="Animation" type="small" gid="79" x="608" y="64" width="16" height="16">
    <properties>
     <property name="frame" value="0"/>
    </properties>
   </object>
-  <object id="30" name="animation" type="small" gid="79" x="640" y="64" width="16" height="16">
+  <object id="30" name="Animation" type="small" gid="79" x="640" y="64" width="16" height="16">
    <properties>
     <property name="frame" value="0"/>
    </properties>
   </object>
-  <object id="31" name="animation" type="small" gid="79" x="768" y="16" width="16" height="16">
+  <object id="31" name="Animation" type="small" gid="79" x="768" y="16" width="16" height="16">
    <properties>
     <property name="frame" value="10"/>
    </properties>
   </object>
-  <object id="32" name="animation" type="small" gid="79" x="800" y="48" width="16" height="16">
+  <object id="32" name="Animation" type="small" gid="79" x="800" y="48" width="16" height="16">
    <properties>
     <property name="frame" value="11"/>
    </properties>
   </object>
-  <object id="33" name="animation" type="small" gid="79" x="800" y="16" width="16" height="16">
+  <object id="33" name="Animation" type="small" gid="79" x="800" y="16" width="16" height="16">
    <properties>
     <property name="frame" value="11"/>
    </properties>
   </object>
-  <object id="34" name="animation" type="small" gid="79" x="768" y="48" width="16" height="16">
+  <object id="34" name="Animation" type="small" gid="79" x="768" y="48" width="16" height="16">
    <properties>
     <property name="frame" value="10"/>
    </properties>
   </object>
-  <object id="35" name="animation" type="small" gid="79" x="768" y="64" width="16" height="16">
+  <object id="35" name="Animation" type="small" gid="79" x="768" y="64" width="16" height="16">
    <properties>
     <property name="frame" value="0"/>
    </properties>
   </object>
-  <object id="36" name="animation" type="small" gid="79" x="800" y="64" width="16" height="16">
+  <object id="36" name="Animation" type="small" gid="79" x="800" y="64" width="16" height="16">
    <properties>
     <property name="frame" value="0"/>
    </properties>
@@ -11033,9 +11029,9 @@
     <property name="trig_type" value="complete"/>
    </properties>
   </object>
-  <object id="38" name="block" gid="1" x="208" y="464" width="16" height="32">
+  <object id="38" name="Block" gid="1" x="208" y="464" width="16" height="32">
    <properties>
-    <property name="collide" value="0"/>
+    <property name="collide" value="false"/>
     <property name="trigType" value="event"/>
     <property name="trigVal" value="1"/>
    </properties>
@@ -14700,52 +14696,52 @@
   </data>
  </layer>
  <objectgroup name="Immovable">
-  <object id="82" x="160" y="464" width="64" height="464"/>
-  <object id="83" x="224" y="912" width="272" height="48"/>
-  <object id="84" x="240" y="896" width="256" height="16"/>
-  <object id="87" x="0" y="928" width="160" height="32"/>
-  <object id="90" x="0" y="128" width="64" height="800"/>
-  <object id="91" x="0" y="0" width="96" height="128"/>
-  <object id="92" x="96" y="0" width="48" height="64"/>
-  <object id="94" x="128" y="64" width="160" height="48"/>
-  <object id="95" x="144" y="32" width="32" height="32"/>
-  <object id="96" x="176" y="0" width="48" height="32"/>
-  <object id="97" x="256" y="0" width="96" height="32"/>
-  <object id="102" x="160" y="112" width="128" height="32"/>
-  <object id="103" x="320" y="64" width="32" height="80"/>
-  <object id="105" x="352" y="64" width="128" height="48"/>
-  <object id="108" x="464" y="0" width="496" height="32"/>
-  <object id="109" x="336" y="32" width="624" height="32"/>
-  <object id="110" x="608" y="64" width="96" height="48"/>
-  <object id="111" x="736" y="64" width="96" height="48"/>
-  <object id="112" x="704" y="64" width="32" height="16"/>
-  <object id="114" x="576" y="96" width="32" height="128"/>
-  <object id="115" x="672" y="144" width="32" height="80"/>
-  <object id="116" x="736" y="144" width="32" height="80"/>
-  <object id="118" x="768" y="112" width="64" height="112"/>
-  <object id="119" x="608" y="112" width="64" height="112"/>
-  <object id="121" x="384" y="160" width="192" height="64"/>
-  <object id="122" x="288" y="192" width="96" height="96"/>
-  <object id="123" x="384" y="224" width="96" height="32"/>
-  <object id="124" x="224" y="224" width="64" height="96"/>
-  <object id="126" x="192" y="256" width="64" height="96"/>
-  <object id="127" x="160" y="288" width="64" height="144"/>
-  <object id="129" x="480" y="288" width="32" height="80"/>
-  <object id="130" x="512" y="288" width="64" height="16"/>
-  <object id="131" x="576" y="288" width="32" height="80"/>
-  <object id="133" x="528" y="304" width="32" height="16"/>
-  <object id="134" x="688" y="256" width="32" height="112"/>
-  <object id="135" x="720" y="256" width="96" height="16"/>
-  <object id="136" x="816" y="256" width="32" height="112"/>
-  <object id="138" x="832" y="368" width="16" height="16"/>
-  <object id="139" x="688" y="368" width="16" height="16"/>
-  <object id="140" x="720" y="336" width="96" height="16"/>
-  <object id="142" x="896" y="64" width="64" height="512"/>
-  <object id="144" x="896" y="608" width="64" height="352"/>
-  <object id="145" x="816" y="928" width="80" height="32"/>
-  <object id="146" x="528" y="896" width="288" height="64"/>
-  <object id="147" x="624" y="656" width="128" height="96"/>
-  <object id="148" x="624" y="752" width="16" height="32"/>
-  <object id="150" x="672" y="752" width="80" height="32"/>
+  <object id="82" name="Immove" x="160" y="464" width="64" height="464"/>
+  <object id="83" name="Immove" x="224" y="912" width="272" height="48"/>
+  <object id="84" name="Immove" x="240" y="896" width="256" height="16"/>
+  <object id="87" name="Immove" x="0" y="928" width="160" height="32"/>
+  <object id="90" name="Immove" x="0" y="128" width="64" height="800"/>
+  <object id="91" name="Immove" x="0" y="0" width="96" height="128"/>
+  <object id="92" name="Immove" x="96" y="0" width="48" height="64"/>
+  <object id="94" name="Immove" x="128" y="64" width="160" height="48"/>
+  <object id="95" name="Immove" x="144" y="32" width="32" height="32"/>
+  <object id="96" name="Immove" x="176" y="0" width="48" height="32"/>
+  <object id="97" name="Immove" x="256" y="0" width="96" height="32"/>
+  <object id="102" name="Immove" x="160" y="112" width="128" height="32"/>
+  <object id="103" name="Immove" x="320" y="64" width="32" height="80"/>
+  <object id="105" name="Immove" x="352" y="64" width="128" height="48"/>
+  <object id="108" name="Immove" x="464" y="0" width="496" height="32"/>
+  <object id="109" name="Immove" x="336" y="32" width="624" height="32"/>
+  <object id="110" name="Immove" x="608" y="64" width="96" height="48"/>
+  <object id="111" name="Immove" x="736" y="64" width="96" height="48"/>
+  <object id="112" name="Immove" x="704" y="64" width="32" height="16"/>
+  <object id="114" name="Immove" x="576" y="96" width="32" height="128"/>
+  <object id="115" name="Immove" x="672" y="144" width="32" height="80"/>
+  <object id="116" name="Immove" x="736" y="144" width="32" height="80"/>
+  <object id="118" name="Immove" x="768" y="112" width="64" height="112"/>
+  <object id="119" name="Immove" x="608" y="112" width="64" height="112"/>
+  <object id="121" name="Immove" x="384" y="160" width="192" height="64"/>
+  <object id="122" name="Immove" x="288" y="192" width="96" height="96"/>
+  <object id="123" name="Immove" x="384" y="224" width="96" height="32"/>
+  <object id="124" name="Immove" x="224" y="224" width="64" height="96"/>
+  <object id="126" name="Immove" x="192" y="256" width="64" height="96"/>
+  <object id="127" name="Immove" x="160" y="288" width="64" height="144"/>
+  <object id="129" name="Immove" x="480" y="288" width="32" height="80"/>
+  <object id="130" name="Immove" x="512" y="288" width="64" height="16"/>
+  <object id="131" name="Immove" x="576" y="288" width="32" height="80"/>
+  <object id="133" name="Immove" x="528" y="304" width="32" height="16"/>
+  <object id="134" name="Immove" x="688" y="256" width="32" height="112"/>
+  <object id="135" name="Immove" x="720" y="256" width="96" height="16"/>
+  <object id="136" name="Immove" x="816" y="256" width="32" height="112"/>
+  <object id="138" name="Immove" x="832" y="368" width="16" height="16"/>
+  <object id="139" name="Immove" x="688" y="368" width="16" height="16"/>
+  <object id="140" name="Immove" x="720" y="336" width="96" height="16"/>
+  <object id="142" name="Immove" x="896" y="64" width="64" height="512"/>
+  <object id="144" name="Immove" x="896" y="608" width="64" height="352"/>
+  <object id="145" name="Immove" x="816" y="928" width="80" height="32"/>
+  <object id="146" name="Immove" x="528" y="896" width="288" height="64"/>
+  <object id="147" name="Immove" x="624" y="656" width="128" height="96"/>
+  <object id="148" name="Immove" x="624" y="752" width="16" height="32"/>
+  <object id="150" name="Immove" x="672" y="752" width="80" height="32"/>
  </objectgroup>
 </map>

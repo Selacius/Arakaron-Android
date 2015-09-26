@@ -1,4 +1,4 @@
-package com.arakaron.Assets.Tiles{
+package com.arakaron.Tiles{
 	public interface Tile{
 		function onAddedtoStage():void;
 		function onRemovedFromStage():void;

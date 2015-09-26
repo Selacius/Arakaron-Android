@@ -17,8 +17,6 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>com.adobe.flexide.project.multiplatform.multiplatformasnature</nature>
-		<nature>com.adobe.flexide.project.multiplatform.multiplatformnature</nature>
 		<nature>com.adobe.flexbuilder.project.apollonature</nature>
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
@@ -26,7 +24,7 @@
 		<link>
 			<name>bin-debug</name>
 			<type>2</type>
-			<location>C:/Users/User/Documents/Arakaron/Arakaron - Android/Debug/sqlParser/bin-debug</location>
+			<location>C:/Users/User/Documents/Arakaron/Arakaron - Android/Debug/sqlParser-Debug</location>
 		</link>
 	</linkedResources>
 </projectDescription>

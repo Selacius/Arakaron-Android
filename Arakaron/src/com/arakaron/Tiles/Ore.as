@@ -28,19 +28,19 @@ package com.arakaron.Tiles{
 		
 		private var anim:Animation;
 		
-		public function Ore(xmldoc:XML){
+		public function Ore(tileObs:Object){
 			super();
 			
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y - 16;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 16;
 			
 			this.caste = "Ore";
 			this.Interact = true;
 			
-			this.frame = xmldoc.properties.property[0].@value;
-			this.maxQuan = xmldoc.properties.property[1].@value;
+			this.frame = tileObs.tileFrame;
+			this.maxQuan = tileObs.tileVal1e;
 			this.currQuan = this.maxQuan;		
-			this.oreType = xmldoc.properties.property[0].@value;
+			this.oreType = tileObs.tileType;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();
@@ -60,8 +60,10 @@ package com.arakaron.Tiles{
 			this.addChild(this.InteractHitArea);
 			
 			this.addChild(this.canvasBitmap);
-			
-			this.anim = new Animation(0,16,6,"small");
+
+			var obs:Object = {tileX:0, tileY:0, tileFrame:6, tileType:"small"}
+
+			this.anim = new Animation(obs);
 			this.addChild(this.anim);
 			this.anim.onAddedtoStage();
 			

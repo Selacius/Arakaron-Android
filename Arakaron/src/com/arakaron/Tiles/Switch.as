@@ -1,6 +1,6 @@
 package com.arakaron.Tiles{
 	import com.arakaron.Arakaron;
-	import com.arakaron.LoadMap2;
+	import com.arakaron.LoadMap3;
 	import com.arakaron.sqlManager;
 	
 	import flash.display.Bitmap;
@@ -11,7 +11,7 @@ package com.arakaron.Tiles{
 	import flash.geom.Rectangle;
 	
 	public class Switch extends Sprite implements Tile{
-		private var hostMap:LoadMap2;
+		private var hostMap:LoadMap3;
 		
 		public var caste:String;
 		
@@ -34,7 +34,7 @@ package com.arakaron.Tiles{
 		private var tileset:BitmapData;
 		private var canvasBitmap:Bitmap;
 		
-		public function Switch(ref_map:LoadMap2, xmldoc:XML){
+		public function Switch(ref_map:LoadMap3, tileObs:Object){
 			super();
 			
 			this.hostMap = ref_map;
@@ -42,19 +42,19 @@ package com.arakaron.Tiles{
 			this.caste = "Switch";
 			this.Interact = true;
 			
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y - 16;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 16;
 			
-			this.baseFrame = xmldoc.properties.property[0].@value;
-			this.trigMulti = Boolean(String(xmldoc.properties.property[1].@value));
-			this.reset = String(xmldoc.properties.property[2].@value);
+			this.baseFrame = int(tileObs.tileFrame);
+			this.trigMulti = Boolean(tileObs.tileVal1);
+			this.reset = String(tileObs.tileVal2);
 			
-			this.trigger = xmldoc.properties.property[4].@value;
-			this.trigID = xmldoc.properties.property[5].@value;
-			this.trigIDval1 = int(String(xmldoc.properties.property[3].@value).split("|")[0]);
-			this.trigIDval2 = int(String(xmldoc.properties.property[3].@value).split("|")[1]);
+			this.trigger = tileObs.tileType;
+			this.trigIDval1 = int(String(tileObs.tileVal3).split("|")[0]);
+			this.trigIDval2 = int(String(tileObs.tileVal3).split("|")[1]);
+			this.trigID = tileObs.tileVal4;
 			
-			xmldoc = null;
+			tileObs = null;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();

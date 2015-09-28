@@ -24,25 +24,25 @@ package com.arakaron.Tiles{
 		public var InteractHitArea:Sprite;
 		public var Interact:Boolean;
 		
-		public function Block(mapName:String, xmldoc:XML){
+		public function Block(mapName:String, tileObs:Object){
 			super();
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y - 32;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 32;
 			
-			this.intHeight = xmldoc.@height;
-			this.intWidth = xmldoc.@width;
+			this.intHeight = tileObs.tileHeight;
+			this.intWidth = tileObs.tileWidth;
 			
-			this.baseCollide = Boolean(int(xmldoc.properties.property[0].@value));
+			this.baseCollide = Boolean(int(tileObs.tileVal1));
 			this.Blocked = this.baseCollide;
-			this.trigType = xmldoc.properties.property[1].@value;
-			this.trigVal = int(xmldoc.properties.property[2].@value);
+			this.trigType = tileObs.tileVal2;
+			this.trigVal = int(tileObs.tileVal3);
 			
-			this.blockID = mapName+"|"+xmldoc.@x+"|"+xmldoc.@y;
+			this.blockID = mapName+"|"+tileObs.tileX+"|"+tileObs.tileY;
 			
 			this.caste = "Block";
 			this.Interact = true;
 			
-			xmldoc = null;
+			tileObs = null;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();

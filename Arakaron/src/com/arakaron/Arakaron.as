@@ -317,15 +317,14 @@ package com.arakaron {
 		}
 		
 		public function mapSwitch(mapID:String, mapX:int, mapY:int):void {
-			if (mapManager.Maps[mapID] == undefined) {
+			if (mapManager2.Maps[mapID] == undefined) {
 				AlertWindow.updateWin("Unfortunately this map is not yet available.", true);
 			} else {
 				if (this.container.numChildren > 0) {
 					this.container.removeChildren(0,this.container.numChildren-1);
 				}
 				
-				//this.curr_map = new LoadMap2(mapManager.Maps[mapID]);
-				this.curr_map = mapManager.Maps[mapID];
+				this.curr_map = mapManager2.Maps[mapID];
 				
 				this.container.addChildAt(this.curr_map,0);		
 				this.container.addChildAt(this.main_play,1);

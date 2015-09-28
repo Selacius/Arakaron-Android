@@ -1,7 +1,6 @@
 package com.arakaron.Tiles{
 	import com.arakaron.Arakaron;
 	import com.arakaron.Game_Inventory;
-	import com.arakaron.LoadMap2;
 	import com.arakaron.sqlManager;
 	
 	import flash.display.Bitmap;

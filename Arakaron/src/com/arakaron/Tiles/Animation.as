@@ -24,17 +24,17 @@ package com.arakaron.Tiles{
 		private var animCount:int;
 		public var rect:Rectangle;
 		
-		public function Animation(xint:int, yint:int, frame:int, type:String){
+		public function Animation(tileObs:Object){
 			super();
 			
-			this.x = xint;
-			this.y = yint - 16;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 16;
 			
 			this.caste = "Animation";
 			this.Interact = false;
 			
-			this.size = type;
-			this.frame = frame;
+			this.size = tileObs.tileType;
+			this.frame = tileObs.tileFrame;
 			
 			switch (this.size) {
 				case "small":

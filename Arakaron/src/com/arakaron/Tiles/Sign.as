@@ -20,19 +20,19 @@ package com.arakaron.Tiles{
 		private var frame:int;
 		private var msgText:String;
 		
-		public function Sign(xmldoc:XML){
+		public function Sign(tileObs:Object){
 			super();
 			
 			this.caste = "Sign";
 			this.Interact = true;
 			
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y - 16;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 16;
 			
-			this.frame = xmldoc.properties.property[0].@value;
-			this.msgText = xmldoc.properties.property[1].@value;
+			this.frame = tileObs.tileFrame;
+			this.msgText = tileObs.tileVal1;
 			
-			xmldoc = null;
+			tileObs = null;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();

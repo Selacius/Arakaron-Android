@@ -34,7 +34,7 @@
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
-      <libraryPathEntry kind="3" linkType="1" path="src/com/arakaron/Helpers/MadComponentsLib0_7_9.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="3" linkType="1" path="src/com/arakaron/Helpers/ExtendedMadnessLib0_3_1.swc" useDefaultLinkType="false"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>
@@ -64,11 +64,11 @@
       <actionScriptSettings version="1"/>
     </buildTarget>
     <buildTarget buildTargetName="com.adobe.flexide.multiplatform.ios.platform" iosSettingsVersion="1" provisioningFile="" releasePackageType="">
-      <multiPlatformSettings enabled="false" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.ios.platform" version="2"/>
       <airSettings airCertificatePath="" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths/>
       </airSettings>
+      <multiPlatformSettings enabled="false" includePlatformLibs="false" platformID="com.adobe.flexide.multiplatform.ios.platform" version="2"/>
       <actionScriptSettings version="1"/>
     </buildTarget>
   </buildTargets>

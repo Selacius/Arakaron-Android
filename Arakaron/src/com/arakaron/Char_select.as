@@ -12,6 +12,8 @@ package com.arakaron{
 	import flash.text.TextField;
 	import com.arakaron.Helpers.Avatar;
 
+	import flash.system.*;
+	
 	public class Char_select extends Sprite{
 		private var main_class:Arakaron;
 		

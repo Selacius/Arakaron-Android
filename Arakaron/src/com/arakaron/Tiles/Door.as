@@ -1,7 +1,6 @@
 package com.arakaron.Tiles{
 	import com.arakaron.Arakaron;
 	import com.arakaron.Game_Inventory;
-	import com.arakaron.LoadMap2;
 	import com.arakaron.sqlManager;
 	
 	import flash.display.Bitmap;
@@ -30,22 +29,22 @@ package com.arakaron.Tiles{
 		private var keyID:int;
 		private var isLocked:Boolean;
 		
-		public function Door(mapName:String, xmldoc:XML){
+		public function Door(mapName:String, tileObs:Object){
 			super();
 			
 			this.caste = "Door";
 			this.Interact = true;
-			this.doorID = mapName+"|"+xmldoc.@x+"|"+xmldoc.@y;
+			this.doorID = mapName+"|"+tileObs.tileX+"|"+tileObs.tileY;
 			
-			this.x = xmldoc.@x;
-			this.y = xmldoc.@y - 16;
+			this.x = tileObs.tileX;
+			this.y = tileObs.tileY - 16;
 			
-			this.canOpen = Boolean(String(xmldoc.properties.property[0].@value));
-			this.startFrame = int(xmldoc.properties.property[1].@value);
-			this.isLocked = Boolean(String(xmldoc.properties.property[2].@value));
-			this.keyID = xmldoc.properties.property[3].@value;
+			this.canOpen = Boolean(String(tileObs.tileVal1));
+			this.startFrame = int(tileObs.tileFrame);
+			this.isLocked = Boolean(String(tileObs.tileType));
+			this.keyID = tileObs.tileVal2;
 			
-			xmldoc = null;
+			tileObs = null;
 			
 			this.ImmoveHitArea = new Sprite();
 			this.InteractHitArea = new Sprite();

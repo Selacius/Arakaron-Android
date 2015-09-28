@@ -2,7 +2,6 @@ package{
 	import com.arakaron.Arakaron;
 	import com.arakaron.GUI.TxtFields;
 	import com.arakaron.dbManager;
-	import com.arakaron.mapManager;
 	import com.arakaron.mapManager2;
 	import com.arakaron.sqlManager;
 	

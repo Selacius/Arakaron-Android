@@ -1,6 +1,6 @@
 package com.arakaron{
 	import com.arakaron.Tiles.*;
-	import com.arakaron.mapManager;
+	import com.arakaron.mapManager2;
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -46,7 +46,6 @@ package com.arakaron{
 			for each (var val:Object in this.mapObs) {
 				switch (val.tileAlias) {
 					case "Immove":
-						trace ("Immove Added");
 						this.tiles = new Immove2(val.tileX,val.tileY,val.tileWidth,val.tileHeight);
 						this.Barrier[this.Barrier.length] = this.tiles;
 						break;
@@ -58,50 +57,38 @@ package com.arakaron{
 						this.tiles = new Exit(val);
 						this.Barrier[this.Barrier.length] = this.tiles;
 						break;
-				}
-			}
-			
-			/*
-					case "exit":
-						this.tiles = new Exit(xmldoc);
+					case "Switch":
+						this.tiles = new Switch(this, val);
 						this.Barrier[this.Barrier.length] = this.tiles;
 						break;
-					case "animation":
-						this.tiles = new Animation(xmldoc.@x,xmldoc.@y,xmldoc.properties.property[0].@value,xmldoc.@type);
-						this.Barrier[this.Barrier.length] = this.tiles;
-						this.Animations[this.Animations.length] = this.tiles;
-						break;
-					case "switch":
-						this.tiles = new Switch(this, xmldoc);
-						this.Barrier[this.Barrier.length] = this.tiles;
-						break;
-					case "block":
-						this.tiles = new Block(this.alias, xmldoc);
-						this.Barrier[this.Barrier.length] = this.tiles;
-						break;
-					case "door":
-						this.tiles = new Door(this.alias, xmldoc);
-						this.Barrier[this.Barrier.length] = this.tiles;
-						break;
-					case "ore":
-						this.tiles = new Ore(xmldoc);
+					case "Ore":
+						this.tiles = new Ore(val);
 						this.Barrier[this.Barrier.length] = this.tiles;
 						this.Animations[this.Animations.length] = this.tiles
 						break;
-					case "sign":
-						this.tiles = new Sign(xmldoc);
+					case "Block":
+						this.tiles = new Block(this.mapName, val);
+						this.Barrier[this.Barrier.length] = this.tiles;
+						break;
+					case "Sign":
+						this.tiles = new Sign(val);
+						this.Barrier[this.Barrier.length] = this.tiles;
+						break;
+					case "Animation":
+						this.tiles = new Animation(val);
+						this.Barrier[this.Barrier.length] = this.tiles;
+						this.Animations[this.Animations.length] = this.tiles;
+						break;
+					case "Door":
+						this.tiles = new Door(this.mapName, val);
+						this.Barrier[this.Barrier.length] = this.tiles;
+						break;
+					case "Sign":
+						this.tiles = new Sign(val);
 						this.Barrier[this.Barrier.length] = this.tiles;
 						break;
 				}
 			}
-			
-			trace (this.alias+" Animations: "+this.Animations.length);
-			
-			this.tiles = null;
-			
-			this.map_XML = null;
-			this.immovable = null;
-			this.collidable = null;		*/
 			
 			this.addEventListener(Event.ADDED_TO_STAGE,onAddedtoStage);
 			this.addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);

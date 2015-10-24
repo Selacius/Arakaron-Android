@@ -44,10 +44,10 @@ package{
 					loadState.text = "SELECT * FROM `"+tempMapInfo+"`";
 					break;
 				case 2:
-					loadState.text = "SELECT * FROM `inventory`";
+					loadState.text = "SELECT * FROM `armors`";
 					break;
 				case 3:
-					loadState.text = "SELECT * FROM `events`";
+					loadState.text = "SELECT * FROM `weapons`";
 					break;
 			}
 			if (loadSQL != 1){
@@ -101,6 +101,41 @@ package{
 			}
 		}
 		
+		public function insertGearInfo(gear:Object):void {
+			loadState.addEventListener(SQLEvent.RESULT,onGearInfoInsert);
+			
+			loadState.text = "INSERT INTO `"+gear.Table+"` (`iAlias`, `iSlot`, `iLvl`, `iLogo`, `iCaste`, `iStyle`, `iRarity`, `iQuality`, `iAtk`, `iAtkP`, `iDef`, `iDefP`, `imDef`, `iDesc`, `iStats`, `iOnHit`, `iCost`)"+
+							 "VALUES (@iAlias, @iSlot, @iLvl, @iLogo, @iCaste, @iStyle, @iRarity, @iQuality, @iAtk, @iAtkP, @iDef, @iDefP, @imDef, @iDesc, @iStats, @iOnHit, @iCost);";
+			
+			loadState.parameters["@iAlias"] = gear.Alias;
+			loadState.parameters["@iSlot"] = gear.Slot;
+			loadState.parameters["@iLvl"] = gear.Lvl;
+			loadState.parameters["@iLogo"] = 1;
+			
+			loadState.parameters["@iCaste"] = gear.Caste;
+			loadState.parameters["@iStyle"] = gear.Style;
+			loadState.parameters["@iRarity"] = gear.Rarity;
+			loadState.parameters["@iQuality"] = gear.Quality;
+			
+			loadState.parameters["@iAtk"] = gear.Atk;
+			loadState.parameters["@iAtkP"] = gear.Atkp;
+			loadState.parameters["@iDef"] = gear.Def;
+			loadState.parameters["@iDefP"] = gear.Defp;
+			loadState.parameters["@imDef"] = gear.mDef;
+			
+			loadState.parameters["@iDesc"] = gear.Desc;
+			loadState.parameters["@iStats"] = gear.iStats;
+			loadState.parameters["@iOnHit"] = gear.OnHit;
+			
+			loadState.parameters["@iCost"] = gear.Cost;
+			
+			loadState.execute();
+		}
+		
+		public function onGearInfoInsert (e:SQLEvent):void {
+			
+		}
+		
 		public function insertMapInfo(mapInfo:Object, mapObs:Object, mapImmove:Object):void {
 			this.mapInfoSingle = mapInfo;
 			this.mapObsSingle = mapObs;
@@ -124,17 +159,17 @@ package{
 				loadState.execute();
 			} else {
 				if (!this.mapObsSingle[0]) {
-					sqlParser._complete.text += "   -Collidable Object Layer Not Present.";
+					mapManager._complete.text += "   -Collidable Object Layer Not Present.";
 				}
 				if (!this.mapImmoveSingle[0]) {
-					sqlParser._complete.text += "   -Immovable Object Layer Not Present.";
+					mapManager._complete.text += "   -Immovable Object Layer Not Present.";
 				}
-				sqlParser._complete.text += "   -Parsing Prevented Until Layer(s) Present.";
+				mapManager._complete.text += "   -Parsing Prevented Until Layer(s) Present.";
 			}
 		}
 		
 		public function onMapInfoInsert(e:SQLEvent):void {
-			sqlParser._complete.text += "   -Map Info Inserted";
+			mapManager._complete.text += "   -Map Info Inserted";
 			
 			loadState.removeEventListener(SQLEvent.RESULT,onMapInfoInsert);
 			loadState.addEventListener(SQLEvent.RESULT,onMapTableCreate);
@@ -147,7 +182,7 @@ package{
 		}
 		
 		public function onMapTableCreate(e:SQLEvent):void {
-			sqlParser._complete.text += "   -Map Table Created";
+			mapManager._complete.text += "   -Map Table Created";
 			loadState.removeEventListener(SQLEvent.RESULT,onMapTableCreate);
 			var saveState:SQLStatement = new SQLStatement();
 			
@@ -243,7 +278,7 @@ package{
 				
 				saveState.execute();
 			}
-			sqlParser._complete.text += "   -Map Object Data Inserted";
+			mapManager._complete.text += "   -Map Object Data Inserted";
 		}
 	}
 }

@@ -1,9 +1,9 @@
 package com.arakaron.GUI{
-	import com.arakaron.Helpers.Gear.Armor;
-	import com.arakaron.Helpers.Gear.Jewelry;
-	import com.arakaron.Helpers.Gear.Weapon;
+	import com.arakaron.Helpers.Gear.*;
 	import com.arakaron.Helpers.Menus.EquipMenu;
 	import com.arakaron.Helpers.Menus.StatusMenu;
+	
+	import com.arakaron.GUI.textButton;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -13,7 +13,7 @@ package com.arakaron.GUI{
 	import flash.utils.getQualifiedClassName;
 
 	public class ToolTip extends Sprite{
-		private var eqButton:getTextButton;
+		private var eqButton:textButton;
 		
 		private var heightMod:int;
 		private var equip:String;
@@ -52,12 +52,12 @@ package com.arakaron.GUI{
 
 			switch (equip) {
 				case "equip":
-					this.eqButton = new getTextButton("Equip", "small");
+					this.eqButton = new textButton(this,<text size="small">Equip</text>);
 					this.eqButton.addEventListener(MouseEvent.CLICK, onMouseClick);
 					heightMod += this.eqButton.height;
 					break
 				case "unequip":
-					this.eqButton = new getTextButton("Unequip","small");
+					this.eqButton = new textButton(this,<text size="small">Unequip</text>);
 					this.eqButton.addEventListener(MouseEvent.CLICK, onMouseClick);
 					heightMod += this.eqButton.height;
 					break
@@ -204,7 +204,7 @@ package com.arakaron.GUI{
 			
 			this.addChild(gearCompTxt);
 			
-			this.eqButton = new getTextButton("Equip", "small");
+			this.eqButton = new textButton(this,<text size="small">Equip</text>);
 			this.eqButton.addEventListener(MouseEvent.CLICK, onMouseClick);
 			
 			this.addChild(this.eqButton);

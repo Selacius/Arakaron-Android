@@ -34,7 +34,7 @@ package{
 		protected static const Nav:XML = <tabPages alt="true" id="tabs">
 			{mapManager.MAP_VIEW}
 			{gearManager.GEAR_VIEW}
-			{ITEM_VIEW}
+			{allyManager.ALLY_VIEW}
 		</tabPages>;
 		
 		protected static const popup_layout:XML = <vertical><skin>{getQualifiedClassName(WNDW)}</skin><label id="pop">Hello there</label>
@@ -61,32 +61,16 @@ package{
 			
 			_nav.setTab(0,"Map Parser",null);
 			_nav.setTab(1,"Gear Parser",null);
-			_nav.setTab(2,"Item Parser",null);
+			_nav.setTab(2,"Allies Parser",null);
 			_nav.button(0).addEventListener(MouseEvent.CLICK,mapManager.onDisplay);
 			_nav.button(1).addEventListener(MouseEvent.CLICK,gearManager.onDisplay);
-			//_nav.button(2).addEventListener(MouseEvent.CLICK,onItemParser);
+			_nav.button(2).addEventListener(MouseEvent.CLICK,allyManager.onDisplay);
 			
 			mapManager.onDisplay(null);
 		}
 		
 		public static function redraw():void {
 			UI.redraw();
-		}
-		
-		protected function onGearParser(event:MouseEvent):void {
-		var data:XML = <data>
-			    <item label="Sneezy"/>
-				<item label="Sleepy"/>
-			   <item label="Dopey"/>
-				<item label="Doc"/>
-				<item label="Happy"/>
-				<item label="Bashful"/>
-				<item label="Grumpy"/>
-			</data>;
-		
-		var _list:UIList = UIList(UI.findViewById("maplist"));
-			_list.xmlData = data;
-
 		}
 		
 	}

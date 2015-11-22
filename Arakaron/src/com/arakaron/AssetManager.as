@@ -22,6 +22,15 @@ package com.arakaron{
 		[Embed(source='Assets/Graphics/Armors.png')]
 			public static var armors:Class;
 		
+		[Embed(source="Assets/Graphics/WNDW.png",
+      			scaleGridTop="16", scaleGridBottom="48",
+      			scaleGridLeft="16", scaleGridRight="48")]
+			public static const WNDW:Class;	
+		[Embed(source="Assets/Graphics/Menu2.png",
+      			scaleGridTop="43", scaleGridBottom="87",
+      			scaleGridLeft="37", scaleGridRight="81")]
+			public static const MENU2:Class;	
+			
 		[Embed(source='Assets/Graphics/characters/Actor1.png')]
 			public static var actor1:Class;
 		[Embed(source='Assets/Graphics/characters/Actor1 - Faces.png')]

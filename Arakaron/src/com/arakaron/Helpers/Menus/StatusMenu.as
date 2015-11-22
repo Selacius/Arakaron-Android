@@ -48,9 +48,9 @@ package com.arakaron.Helpers.Menus{
 		private var lftBTN:Sprite;
 		private var rgtBTN:Sprite;
 		
-		private var gearBTN:getTextButton;
-		private var immuneBTN:getTextButton;
-		private var goalBTN:getTextButton;
+		private var gearBTN:textButton;
+		private var immuneBTN:textButton;
+		private var goalBTN:textButton;
 		
 		private var gearFrame:Sprite;
 		private var immuneFrame:Sprite;
@@ -156,7 +156,7 @@ package com.arakaron.Helpers.Menus{
 			verti.x = 232;
 			this.addChild(verti);
 			
-			this.gearBTN = new getTextButton("Gear","medium");
+			this.gearBTN = new textButton(this,<text size="medium">Gear</text>);
 			this.gearBTN.y = 190;
 			this.gearBTN.x = 248;
 			this.addChild(this.gearBTN);
@@ -164,7 +164,7 @@ package com.arakaron.Helpers.Menus{
 			
 			this.gearFrame = new Sprite();
 			this.gearFrame.x = 235;
-			this.gearFrame.y = 225;
+			this.gearFrame.y = 235;
 			this.addChild(this.gearFrame);
 			
 			i = 0;
@@ -180,7 +180,7 @@ package com.arakaron.Helpers.Menus{
 			this.toolTip = new ToolTip();
 			this.gearFrame.addChild(this.toolTip);
 			
-			this.immuneBTN = new getTextButton("Immunity","medium");
+			this.immuneBTN = new textButton(this,<text size="medium">Immunity</text>);
 			this.immuneBTN.y = 190;
 			this.immuneBTN.x = 322;
 			this.addChild(this.immuneBTN);
@@ -188,14 +188,14 @@ package com.arakaron.Helpers.Menus{
 			
 			this.immuneFrame = new Sprite();
 			this.immuneFrame.x = 235;
-			this.immuneFrame.y = 225;
+			this.immuneFrame.y = 235;
 			this.immuneFrame.visible = false;
 			this.addChild(this.immuneFrame);
 			
 			this.immuneTxt = new TxtFields("RegText",275,250,true,true);
 			this.immuneFrame.addChild(this.immuneTxt);
 			
-			this.goalBTN = new getTextButton("Goals","medium");
+			this.goalBTN = new textButton(this,<text size="medium">Goals</text>);
 			this.goalBTN.y = 190;
 			this.goalBTN.x = 431;
 			this.addChild(this.goalBTN);
@@ -203,7 +203,7 @@ package com.arakaron.Helpers.Menus{
 			
 			this.goalFrame = new Sprite();
 			this.goalFrame.x = 235;
-			this.goalFrame.y = 225;
+			this.goalFrame.y = 235;
 			this.goalFrame.visible = false;
 			this.addChild(this.goalFrame);
 			

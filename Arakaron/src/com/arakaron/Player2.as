@@ -13,7 +13,7 @@
 		
 		public var gear:Gear_List;
 		
-		private var PC:XML;
+		private var PC:Object;
 		
 		public var ident:int;
 		public var alias:String;
@@ -29,7 +29,7 @@
 		public var a_str:int=0, a_agi:int=0, a_spr:int=0, a_dex:int=0, a_vit:int=0, a_wisdom:int=0;
 		private var bhp:int, bmp:int, bstr:int, bagi:int, bspr:int, bdex:int, bvit:int, bwisdom:int;
 
-		public function Player (PC:XML) {
+		public function Player (PC:Object) {
 			this.PC = PC;
 			
 			this.ident = PC.@id;
@@ -151,7 +151,7 @@
 			if (type == null) {
 				type = this.caste;
 			} else if (type == "Magic") {
-				_def += this.Spr/4 + this.gear.getStat("iDef")/(0.75 + Math.exp((-0.09 * this.Spr) + 5));
+				_def += this.gear.getStat("imDef");
 			} else {
 				_def += this.gear.getStat("iDef")
 			}

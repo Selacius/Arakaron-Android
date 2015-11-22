@@ -87,11 +87,7 @@ package{
 			
 			dbManager.addEventListener("fullTick",onTick);
 			dbManager.setDBLoad();
-			
-		//	loadMax = mapManager2.mapLength + dbManager.loadArray.length;
-		//	this.loadTick = Math.round(100 * 400/loadMax)/100;
 
-			//mapManager.startLoadMap();
 		}
 		
 		private function onTick (e:Event):void {

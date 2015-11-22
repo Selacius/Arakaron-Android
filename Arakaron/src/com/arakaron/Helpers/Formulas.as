@@ -12,47 +12,10 @@
 		private var load_stats:XML;
 		private var xmldoc:XML;
 		
-		private var batt_stats:Array = new Array();
 		private var vitals_HP:Array = new Array();
 		private var vitals_MP:Array = new Array();
 		
 		public function Formulas () {	
-			this.load_stats = new XML(new Primary_Stats);
-			
-			var code:String;
-			
-			for (code in this.load_stats.growth) {
-				xmldoc = this.load_stats.growth[code];
-				
-				this.batt_stats[code] = new Object();
-				this.batt_stats[code].gradient2 = Number(xmldoc.grad2);
-				this.batt_stats[code].gradient1 = Number(xmldoc.grad);
-				this.batt_stats[code].base = Number(xmldoc.base);
-			}
-			
-			this.load_stats = new XML (new Primary_Stats_HP);
-			
-			for (code in this.load_stats.growth) {
-				xmldoc = this.load_stats.growth[code];
-				
-				this.vitals_HP[code] = new Object();
-				this.vitals_HP[code].gradient3 = Number(xmldoc.grad3);
-				this.vitals_HP[code].gradient2 = Number(xmldoc.grad2);
-				this.vitals_HP[code].gradient1 = Number(xmldoc.grad);
-				this.vitals_HP[code].base = Number(xmldoc.base);
-			}			
-			
-			this.load_stats = new XML (new Primary_Stats_MP);
-			
-			for (code in this.load_stats.growth) {
-				xmldoc = this.load_stats.growth[code];
-				
-				this.vitals_MP[code] = new Object();
-				this.vitals_MP[code].gradient3 = Number(xmldoc.grad3);
-				this.vitals_MP[code].gradient2 = Number(xmldoc.grad2);
-				this.vitals_MP[code].gradient1 = Number(xmldoc.grad);
-				this.vitals_MP[code].base = Number(xmldoc.base);
-			}
 		}
 		
 		public function xpn (lvl:int):int {
@@ -65,46 +28,41 @@
 		
 		public function play_vitals (type:String, growth_val:int, lvl:int):int {
 			var stat:int;
-			var grad3:Number;
 			var grad2:Number;
 			var grad:Number;
-			var base:Number;
 			
 			switch (type) {
-				case "HP":
-					grad3 = this.vitals_HP[growth_val]["gradient3"] * Math.pow(lvl+9,3);
-					grad2 = this.vitals_HP[growth_val]["gradient2"] * Math.pow(lvl+9,2);
-					grad = this.vitals_HP[growth_val]["gradient1"] * (lvl+9);
-					base = this.vitals_HP[growth_val]["base"] - 125;
+				case "HP":	
+					grad = (0.8866 + 0.0325 * (growth_val - 1));
+					grad2 = Math.exp(-0.1*lvl + 5);
 					
-					stat = grad3 + grad2 + grad + base;
+					stat = (8750/(grad + grad2)) + 200 + (5 - growth_val);
+					
 					break;
 				case "MP":
-					grad3 = this.vitals_MP[growth_val]["gradient3"] * Math.pow(lvl,3);
-					grad2 = this.vitals_MP[growth_val]["gradient2"] * Math.pow(lvl,2);
-					grad = this.vitals_MP[growth_val]["gradient1"] * lvl;
-					base = this.vitals_MP[growth_val]["base"];
+					grad = (0.8866 + 0.0325 * (growth_val - 1));
+					grad2 = Math.exp(-0.1*lvl + 5);
 					
-					stat = grad3 + grad2 + grad + base;
+					stat = (875/(grad + grad2)) + 20 + (5 - growth_val);
 					break;
 			}
 			return (stat);
 		}
 		
 		public function play_stats (growth_val:int, lvl:int):int {
-			var grad2:Number = this.batt_stats[growth_val]["gradient2"] * Math.pow(lvl,2);
-			var grad:Number = this.batt_stats[growth_val]["gradient1"] * lvl;
-			var base:Number = this.batt_stats[growth_val]["base"];
+			var grad:Number = (0.75 + 0.075*(growth_val-1));
+			var grad2:Number = Math.exp(-0.09*lvl + 5);
 			
-			return (Math.ceil(grad2 + grad + base));
+			var stat:Number = (250/(grad + grad2)) + 10 + (5 - growth_val); 
+			
+			return (Math.ceil(stat));
 		}
 		
 		public function enemy_stats (growth_val:int, lvl:int, rand:Number):int {
-			var grad2:Number = this.batt_stats[growth_val]["gradient2"] * Math.pow(lvl,2);
-			var grad:Number = this.batt_stats[growth_val]["gradient1"] * lvl;
-			var base:Number = this.batt_stats[growth_val]["base"];
+			var grad:Number = (0.75 + 0.075*(growth_val-1));
+			var grad2:Number = Math.exp(-0.09*lvl + 5);
 			
-			var stat:Number = grad2 + grad + base;
+			var stat:Number = (250/(grad + grad2)) + 10 + (5 - growth_val); 
 			
 			return (Math.ceil(stat * rand));
 		}
@@ -194,7 +152,7 @@
 			return Math.round(def);
 		}
 		
-		public function Damage (att:Object, power:int, targ:Object, type:String):int {
+		public static function Damage (att:Object, power:int, targ:Object, type:String):int {
 			var base_dmg:Number;
 			var max:Number;
 			var dam:int;
@@ -203,33 +161,37 @@
 				case "Physical":
 					base_dmg = att.Atk(type) + ((att.Atk(type) + att.lvl)/32) * ((att.Atk(type) * att.lvl)/32);
 					max = (power * (512 - targ.Def(type)) * base_dmg)/8192;
-					dam = max * (this.Rand_Num("Damage"));
+					dam = max * (Rand_Num("Damage"));
 					break;
 				case "Ranged":
 					base_dmg = att.Atk(type) + ((att.Atk(type) + att.lvl)/32) * ((att.Atk(type) * att.lvl)/32);
 					max = (power * (512 - targ.Def(type)) * base_dmg)/8192;
-					dam = max * (this.Rand_Num("Damage"));
+					dam = max * (Rand_Num("Damage"));
 					break;
 				case "Magic":
 					base_dmg = 6 * (att.Atk(type) + att.lvl);
 					max = (power * (512 - targ.Def(type)) * base_dmg)/8192;
-					dam = max * (this.Rand_Num("Damage"));
+					dam = max * (Rand_Num("Damage"));
 					break;
 				case "Cure":
 					base_dmg = 6 * (att.Atk("Magic") + att.lvl);
 					max = (power * 22 * base_dmg);
-					dam = max * (this.Rand_Num("Damage"));
+					dam = max * (Rand_Num("Damage"));
 					break;
 				case "Item":
 					base_dmg = 16 * power;
 					max = (base_dmg * (512 - targ.Def("Physical")))/512;
-					dam = max * (this.Rand_Num("Damage"));
+					dam = max * (Rand_Num("Damage"));
 					break;
 			}
 			return (Math.floor(dam));
 		}
 		
-		public function Rand_Num (type:String):Number {
+		public static function DR(att:Object, targ:Object):Number {
+			return (((att.Def/(att.Def + 400 + (30 * targ.Lvl)))*100)/100);
+		}
+		
+		public static function Rand_Num (type:String):Number {
 			var rand:Number;
 			switch (type) {
 				case "Damage":

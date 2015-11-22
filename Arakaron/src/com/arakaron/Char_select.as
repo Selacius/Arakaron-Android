@@ -1,7 +1,7 @@
 package com.arakaron{
 	import com.arakaron.GUI.TxtFields;
 	import com.arakaron.GUI.WindowBox;
-	import com.arakaron.GUI.getTextButton;
+	import com.arakaron.GUI.textButton;
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -32,7 +32,7 @@ package com.arakaron{
 		
 		private var char_str:Array;
 		
-		private var select_btn:getTextButton;
+		private var select_btn:textButton;
 		
 		private var i:int;
 		
@@ -122,8 +122,6 @@ package com.arakaron{
 				this.char_info = null;
 				this.char_info1 = null;
 				this.char_info2 = null;
-				this.select_btn.buttonMode = false;
-				this.select_btn.graphics.clear();
 				this.select_btn = null;
 				
 				this.StageHeight = 0;
@@ -159,9 +157,9 @@ package com.arakaron{
 			this.char_info2.y = this.msg_info.height + 25;
 			this.addChild(this.char_info2);
 		
-			this.select_btn = new getTextButton("Select Character", "large");
+			this.select_btn = new textButton(this,<text size="medium">Select Character</text>);
 			this.select_btn.x = Math.round((this.StageWidth - this.select_btn.width)/2);
-			this.select_btn.y = this.char_info.height + 62;
+			this.select_btn.y = this.char_info.height + 57;
 			this.select_btn.addEventListener(MouseEvent.CLICK,onBtnClick,false,0,true);
 			this.addChild(this.select_btn);
 		}

@@ -2,36 +2,59 @@ package com.arakaron{
 	import com.arakaron.Helpers.Gear.Armor;
 	import com.arakaron.Helpers.Gear.Weapon;
 	
-	import flash.events.Event;
-	import flash.events.EventDispatcher;
-	
+	import flash.data.*;
+	import flash.display.Loader;
+	import flash.display.LoaderInfo;
+	import flash.errors.SQLError;
+	import flash.events.*;
+	import flash.filesystem.File;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+
 	public class dbManager{
 		
-		[Embed(source='com/arakaron/Assets/Database/allies.xml', mimeType="application/octet-stream")]
-			private static const Ally:Class;
-		[Embed(source='com/arakaron/Assets/Database/armors.xml', mimeType="application/octet-stream")]
-			private static const ArmorList:Class;
-		[Embed(source='com/arakaron/Assets/Database/weapons.xml', mimeType="application/octet-stream")]
-			private static const WeaponList:Class;
+		private static var GameDB:File = File.applicationDirectory.resolvePath("com/arakaron/Assets/Database/GameDB.db");
 		
 		public static var Allies:Array = new Array();
 		public static var Gear:Object = new Object();
 		private static var Armors:Array = new Array();
 		private static var Weapons:Array = new Array();
 		
-		public static var loadArray:Array = new Array();
+		public static var loadArray:Array = new Array("Armors","Weapons","Allies");
 		private static var loadVal:int;
 		
 		private static var dispatcher:EventDispatcher = new EventDispatcher();
+		
+		public static var connection:SQLConnection;
+		private static var load_sql:int = -1;
+		public static var load_state:SQLStatement;
 		
 		public function dbManager(){
 		}
 		
 		public static function setDBLoad ():void {
-			//loadArray.push(new Array("Armors", new XML(new ArmorList)));
-			loadArray.push(new Array("Armors", new XML(new ArmorList)));
-			loadArray.push(new Array("Weapons", new XML(new WeaponList)));
-			loadArray.push(new Array("Allies", new XML(new Ally)));
+			connection = new SQLConnection();
+			
+			connection.openAsync(GameDB);
+			trace ("Loading GameDB Connection");
+			connection.addEventListener(SQLEvent.OPEN, onOpen);
+			
+			load_state = new SQLStatement()
+			load_state.sqlConnection = connection;
+			load_state.addEventListener(SQLEvent.RESULT,onLoadComplete);
+			load_state.addEventListener(SQLErrorEvent.ERROR,onError);
+		}
+		
+		public static function onOpen(event:SQLEvent):void {
+			
+		}
+		
+		public static function onLoadComplete(event:SQLEvent):void {
+			
+		}
+		
+		public static function onError(event:SQLEvent):void {
+			
 		}
 		
 		public static function startDBLoad():void {

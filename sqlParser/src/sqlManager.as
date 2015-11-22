@@ -16,6 +16,11 @@ package{
 		public static var mapInfo:Array = new Array();
 		public static var maps:Object = new Object();
 		
+		public static var gear:Array = new Array();
+		public static var ally:Array = new Array();
+		
+		public static var Allies:Object = new Object();
+		
 		public var mapInfoSingle:Object;
 		public var mapObsSingle:Object;
 		public var mapImmoveSingle:Object;
@@ -40,17 +45,23 @@ package{
 					loadState.text = "SELECT * FROM `mapInfo`";
 					break;
 				case 0:
-					tempMapInfo = mapInfo[loadSQL].mapName;
+					tempMapInfo = mapInfo[loadMapSQL].mapName;
 					loadState.text = "SELECT * FROM `"+tempMapInfo+"`";
 					break;
-				case 2:
+				case 1:
 					loadState.text = "SELECT * FROM `armors`";
 					break;
-				case 3:
+				case 2:
 					loadState.text = "SELECT * FROM `weapons`";
 					break;
+				case 3:
+					loadState.text = "SELECT * FROM `allies`";
+					break;
+				case 4:
+					loadState.text = "SELECT * FROM `classes`";
+					break;
 			}
-			if (loadSQL != 1){
+			if (loadSQL != 5){
 				loadState.execute();
 			}
 		}
@@ -66,12 +77,33 @@ package{
 					maps[String(e.currentTarget.text).split("`")[1]] = result.data;
 					loadMapSQL++;
 					break;
+				case 1:
+					for (var i in result.data) {
+						result.data[i].iType = "Armor";
+					}
+					gear = gear.concat(result.data);
+					break;
+				case 2:
+					for (var i in result.data) {
+						result.data[i].iType = "Weapon";
+					}
+					gear = gear.concat(result.data);
+					break;
+				case 3:
+					ally = result.data;
+					break;
+				case 4:
+					for each (var obs:Object in result.data) {
+						Allies[obs.Alias] = obs;
+					}
+					break;
 			}
 			if (mapInfo != null) {
 				if (loadMapSQL < mapInfo.length) {
 					onOpen(null);
 				} else {
-					loadState.removeEventListener(SQLEvent.RESULT,onLoadComplete);
+					loadSQL++
+					onOpen(null);
 				}
 			}
 		}
@@ -104,36 +136,36 @@ package{
 		public function insertGearInfo(gear:Object):void {
 			loadState.addEventListener(SQLEvent.RESULT,onGearInfoInsert);
 			
-			loadState.text = "INSERT INTO `"+gear.Table+"` (`iAlias`, `iSlot`, `iLvl`, `iLogo`, `iCaste`, `iStyle`, `iRarity`, `iQuality`, `iAtk`, `iAtkP`, `iDef`, `iDefP`, `imDef`, `iDesc`, `iStats`, `iOnHit`, `iCost`)"+
-							 "VALUES (@iAlias, @iSlot, @iLvl, @iLogo, @iCaste, @iStyle, @iRarity, @iQuality, @iAtk, @iAtkP, @iDef, @iDefP, @imDef, @iDesc, @iStats, @iOnHit, @iCost);";
+			loadState.text = "INSERT INTO `"+gear.Table+"` (`iAlias`, `iSlot`, `iLvl`, `iLogo`, `iCaste`, `iStyle`, `iRarity`, `iQuality`, `iAtk`,`iDef`,`imDef`, `iDesc`, `iStats`, `iOnHit`, `iCost`)"+
+							 "VALUES (@iAlias, @iSlot, @iLvl, @iLogo, @iCaste, @iStyle, @iRarity, @iQuality, @iAtk, @iDef, @imDef, @iDesc, @iStats, @iOnHit, @iCost);";
 			
-			loadState.parameters["@iAlias"] = gear.Alias;
-			loadState.parameters["@iSlot"] = gear.Slot;
-			loadState.parameters["@iLvl"] = gear.Lvl;
+			loadState.parameters["@iAlias"] = gear.iAlias;
+			loadState.parameters["@iSlot"] = gear.iSlot;
+			loadState.parameters["@iLvl"] = gear.iLvl;
+			loadState.parameters["@gLVL"] = gear.gLvl;
 			loadState.parameters["@iLogo"] = 1;
 			
-			loadState.parameters["@iCaste"] = gear.Caste;
-			loadState.parameters["@iStyle"] = gear.Style;
-			loadState.parameters["@iRarity"] = gear.Rarity;
-			loadState.parameters["@iQuality"] = gear.Quality;
+			loadState.parameters["@iCaste"] = gear.iCaste;
+			loadState.parameters["@iStyle"] = gear.iStyle;
+			loadState.parameters["@iRarity"] = gear.iRarity;
+			loadState.parameters["@iQuality"] = gear.iQuality;
 			
-			loadState.parameters["@iAtk"] = gear.Atk;
-			loadState.parameters["@iAtkP"] = gear.Atkp;
-			loadState.parameters["@iDef"] = gear.Def;
-			loadState.parameters["@iDefP"] = gear.Defp;
-			loadState.parameters["@imDef"] = gear.mDef;
+			loadState.parameters["@iAtk"] = gear.iAtk;
+			loadState.parameters["@iDef"] = gear.iDef;			
+			loadState.parameters["@imDef"] = gear.imDef;
 			
-			loadState.parameters["@iDesc"] = gear.Desc;
+			loadState.parameters["@iDesc"] = gear.iDesc;
 			loadState.parameters["@iStats"] = gear.iStats;
-			loadState.parameters["@iOnHit"] = gear.OnHit;
+			loadState.parameters["@iOnHit"] = gear.iOnHit;
 			
-			loadState.parameters["@iCost"] = gear.Cost;
+			loadState.parameters["@iCost"] = gear.iCost;
 			
-			loadState.execute();
+			//loadState.execute();
 		}
 		
 		public function onGearInfoInsert (e:SQLEvent):void {
-			
+			trace ("hey");
+			loadState.removeEventListener(SQLEvent.RESULT,onGearInfoInsert);
 		}
 		
 		public function insertMapInfo(mapInfo:Object, mapObs:Object, mapImmove:Object):void {

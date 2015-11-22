@@ -2,7 +2,7 @@ package com.arakaron {
 	
 	import com.arakaron.Tiles.Tile;
 	import com.arakaron.DPad.*;
-	import com.arakaron.GUI.Inventory;
+	import com.arakaron.Helpers.Menus.Inventory;
 	import com.arakaron.GUI.MiniWin;
 	import com.arakaron.Helpers.Menus.EquipMenu;
 	import com.arakaron.Helpers.Menus.MainMenu;

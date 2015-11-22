@@ -10,7 +10,7 @@ package com.arakaron.Helpers.Menus{
 	import com.arakaron.GUI.CharDisplay;
 	import com.arakaron.GUI.MenuBox;
 	import com.arakaron.GUI.MenuGUI;
-	import com.arakaron.GUI.getTextButton;
+	import com.arakaron.GUI.textButton;
 	
 	public class MainMenu extends Sprite implements MenuGUI{
 		private var gui:MenuBox;
@@ -38,6 +38,7 @@ package com.arakaron.Helpers.Menus{
 			
 			this.removeChildren(0,this.numChildren-1);
 			for (var i:int = 0; i<this.menuOptsText.length; i++) {
+				this.menuOpts[i].destructor();
 				this.menuOpts[i] = null;
 			}
 			for (i = 0; i<Game_Party.active_party().length; i++) {
@@ -54,7 +55,7 @@ package com.arakaron.Helpers.Menus{
 			this.gui.exitBtn.addEventListener(MouseEvent.CLICK,onExitClick);
 			
 			for (var i:int = 0; i<this.menuOptsText.length; i++) {
-				this.menuOpts[i] = new getTextButton(this.menuOptsText[i],"large");
+				this.menuOpts[i] = new textButton(this,<text size="medium">{this.menuOptsText[i]}</text>);
 				this.menuOpts[i].x = (151 * i) + 71;
 				this.menuOpts[i].y = 35;
 				this.addChild(this.menuOpts[i]);
